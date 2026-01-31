@@ -1,6 +1,5 @@
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");
-const loginBtn = document.querySelector(".login-btn");
 
 togglePassword.addEventListener("click", () => {
     const type = passwordInput.type === "password" ? "text" : "password";
@@ -24,6 +23,3 @@ window.onload = () => {
     );
 };
 
-loginBtn.addEventListener("click", () => {
-    window.location.href = "success.php";
-});

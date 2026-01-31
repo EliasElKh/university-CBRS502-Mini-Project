@@ -29,7 +29,7 @@
         <i class="fa-solid fa-eye" id="togglePassword"></i>
     </div>
 
-    <button class="login-btn">Login</button>
+    <button class="login-btn" onclick="window.location.href='success.php'">Login</button>
 
     <p class="register-text">
     Don't have an account? 
