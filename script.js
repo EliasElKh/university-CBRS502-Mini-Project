@@ -25,5 +25,5 @@ window.onload = () => {
 };
 
 loginBtn.addEventListener("click", () => {
-    window.location.href = "success.html";
+    window.location.href = "success.php";
 });
