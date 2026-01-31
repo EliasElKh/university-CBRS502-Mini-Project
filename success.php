@@ -20,7 +20,7 @@
         <textarea id="jwtText" readonly></textarea>
     </div>
 
-    <button class="back-btn" onclick="window.location.href='login.html'">
+    <button class="back-btn" onclick="window.location.href='login.php'">
         Back to Login
     </button>
 </div>
