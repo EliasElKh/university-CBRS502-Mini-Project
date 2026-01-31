@@ -33,7 +33,7 @@
 
     <p class="register-text">
     Don't have an account? 
-    <span class="register-link" onclick="window.location.href='register.html'">
+    <span class="register-link" onclick="window.location.href='sign_up.php'">
         Register
     </span>
     </p>

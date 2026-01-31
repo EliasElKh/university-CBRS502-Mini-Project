@@ -13,7 +13,7 @@ togglePassword.addEventListener("click", () => {
 function handleCredentialResponse(response) {
     const jwt = response.credential;
     localStorage.setItem("google_jwt", jwt);
-    window.location.href = "success.html";
+    window.location.href = "success.php";
 }
 
 // Render Google Button
