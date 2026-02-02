@@ -1,6 +1,12 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "cbrs502");
+require __DIR__ . '/env.php';
+$conn = new mysqli(
+    $_ENV['DB_HOST'],
+    $_ENV['DB_USER'],
+    $_ENV['DB_PASS'],
+    $_ENV['DB_NAME']
+);
 if ($conn->connect_error) die("Database connection failed: " . $conn->connect_error);
 
 
@@ -88,7 +94,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <link rel="stylesheet" href="style.css">
 <style>
 * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 body { margin: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
@@ -129,15 +141,11 @@ body { margin: 0; min-height: 100vh; display: flex; justify-content: center; ali
 Don't have an account? <a href="sign_up.php" class="register-link">Register</a>
 </div>
 <div class="divider">OR</div>
-    <!-- Google OAuth -->
-    <div id="g_id_onload"
-         data-client_id="570410618065-cufu9gmtbkuhdgvb1s1vi8k6u4hanup8.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
-    </div>
 
-    <div class="google-btn"
-         id="googleSignIn">
-    </div>
-</div>
+<a href="google_login.php" class="login-btn" style="text-align:center;display:block;text-decoration:none;">
+    <i class="fa-brands fa-google"></i> Login with Google
+</a>
+
+<!-- <script src="script.js"></script> -->
 </body>
 </html>
